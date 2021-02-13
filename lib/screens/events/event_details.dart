@@ -1,4 +1,4 @@
-import 'package:api_testing/event_model.dart';
+import 'package:api_testing/models/event_model.dart';
 import 'package:flutter/material.dart';
 
 class EventDetails extends StatelessWidget {

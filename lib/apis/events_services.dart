@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:api_testing/event_model.dart';
+import 'package:api_testing/models/event_model.dart';
 import 'package:http/http.dart' as http;
 
 class EventServices {
