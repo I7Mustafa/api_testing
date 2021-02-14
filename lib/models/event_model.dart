@@ -1,8 +1,14 @@
 // To parse this JSON data, do
 //
-//     final welcome = welcomeFromJson(jsonString);
+//     final eventModel = eventModelFromJson(jsonString);
 
 import 'dart:convert';
+
+List<EventModel> eventModelFromJson(String str) => List<EventModel>.from(
+    (json.decode(str) as List).map((x) => EventModel.fromJson(x as Map<String, dynamic>)));
+
+String eventModelToJson(List<EventModel> data) =>
+    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class EventModel {
   EventModel({
@@ -14,11 +20,6 @@ class EventModel {
   final String title;
   final int price;
   final bool status;
-
-  factory EventModel.fromRawJson(String str) =>
-      EventModel.fromJson(json.decode(str) as Map<String, dynamic>);
-
-  String toRawJson() => json.encode(toJson());
 
   factory EventModel.fromJson(Map<String, dynamic> json) => EventModel(
         title: json["title"] as String,
